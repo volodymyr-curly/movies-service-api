@@ -17,6 +17,7 @@
     <modules>
         <module>movies-info-service</module>
         <module>movies-review-service</module>
+        <module>movies-middle-service</module>
     </modules>
 
     <properties>
