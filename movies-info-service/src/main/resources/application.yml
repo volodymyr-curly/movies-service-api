@@ -1,0 +1,35 @@
+server:
+  port: 8080
+
+spring:
+  profiles:
+    active: local
+---
+spring:
+  config:
+    activate:
+      on-profile:
+        - local
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: local
+
+de:
+  flapdoodle:
+    mongodb:
+      embedded:
+        version: 7.0.4
+---
+spring:
+  config:
+    activate:
+      on-profile:
+        - test
+
+de:
+  flapdoodle:
+    mongodb:
+      embedded:
+        version: 7.0.4
