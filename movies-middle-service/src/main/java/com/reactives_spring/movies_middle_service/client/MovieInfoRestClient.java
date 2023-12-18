@@ -44,7 +44,7 @@ public class MovieInfoRestClient {
                     log.error("Status code is : {}", clientResponse.statusCode().value());
                     return clientResponse.bodyToMono(String.class)
                             .flatMap(responseMessage -> Mono.error(new MoviesInfoServerException(
-                                    "Server exception in MoviesInfoService" + responseMessage)));
+                                    "Server exception in MoviesInfoService : " + responseMessage)));
                 })
                 .bodyToMono(MovieInfo.class)
                 .log();
